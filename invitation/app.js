@@ -25,7 +25,7 @@
     '地瓜': {
       file: './assets/invitations/digua.webp',
       original: './assets/originals/digua.png',
-      aliases: ['地瓜', '刘俊豪']
+      aliases: ['地瓜', '刘俊豪', 'ljh']
     },
     '滑板鸡': {
       file: './assets/invitations/skate-chicken.webp',
@@ -46,12 +46,12 @@
     '泡泡': {
       file: './assets/invitations/bubble.webp',
       original: './assets/originals/bubble.png',
-      aliases: ['泡泡', '张鹏奥', 'zpa']
+      aliases: ['泡泡', '张鹏奥', 'zpa', '天使男孩', '泡神', '齐刘海杀手']
     },
     '伍广': {
       file: './assets/invitations/wuguang.webp',
       original: './assets/originals/wuguang.png',
-      aliases: ['伍广', '功夫胖', '伍伯', '5g', '大伯', 'wg'],
+      aliases: ['伍广', '功夫胖', '伍伯', '5g', '大伯', 'wg', 'Raymond'],
       greeting: '大伯，你来啦~'
     },
     '小如': {
