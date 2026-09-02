@@ -3,78 +3,78 @@
 
   const PEOPLE = {
     '哇哇哇': {
-      file: './assets/invitations/wawawa.png',
+      file: './assets/invitations/wawawa.webp',
       aliases: ['哇哇哇', '陈铎宇', 'cdy', '教练']
     },
     '狗子': {
-      file: './assets/invitations/gouzi.png',
+      file: './assets/invitations/gouzi.webp',
       aliases: ['狗子']
     },
     '咕噜': {
-      file: './assets/invitations/gulu.png',
+      file: './assets/invitations/gulu.webp',
       aliases: ['咕噜', '巫皖怡', 'wwy']
     },
     '功夫饭': {
-      file: './assets/invitations/gongfufan.png',
+      file: './assets/invitations/gongfufan.webp',
       aliases: ['功夫饭', '饭']
     },
     '地瓜': {
-      file: './assets/invitations/digua.png',
+      file: './assets/invitations/digua.webp',
       aliases: ['地瓜', '刘俊豪']
     },
     '滑板鸡': {
-      file: './assets/invitations/skate-chicken.png',
+      file: './assets/invitations/skate-chicken.webp',
       aliases: ['滑板鸡', '赵泽彬', 'zzb']
     },
     '哼哼': {
-      file: './assets/invitations/hengheng.png',
+      file: './assets/invitations/hengheng.webp',
       aliases: ['哼哼', '曾珩', 'zh']
     },
     '羚羊': {
-      file: './assets/invitations/antelope.png',
+      file: './assets/invitations/antelope.webp',
       aliases: ['羚羊', '李扬', 'goat', '魅魔', 'ly'],
       greeting: '魅魔，你来啦~'
     },
     '泡泡': {
-      file: './assets/invitations/bubble.png',
+      file: './assets/invitations/bubble.webp',
       aliases: ['泡泡', '张鹏奥', 'zpa']
     },
     '伍广': {
-      file: './assets/invitations/wuguang.png',
+      file: './assets/invitations/wuguang.webp',
       aliases: ['伍广', '功夫胖', '伍伯', '5g', '大伯', 'wg'],
       greeting: '大伯，你来啦~'
     },
     '小如': {
-      file: './assets/invitations/xiaoru.png',
+      file: './assets/invitations/xiaoru.webp',
       aliases: ['小如', '孙玉如', 'syr']
     },
     '淤青': {
-      file: './assets/invitations/yuqing.png',
+      file: './assets/invitations/yuqing.webp',
       aliases: ['淤青', '齐刘海', 'yyq', '严雨晴', '老乡'],
       greeting: '老乡，你来啦~'
     },
     '穗穗': {
-      file: './assets/invitations/suisui.png',
+      file: './assets/invitations/suisui.webp',
       aliases: ['穗穗']
     },
     '章鱼': {
-      file: './assets/invitations/octopus.png',
+      file: './assets/invitations/octopus.webp',
       aliases: ['章鱼', 'ydc', '尹德驰', '章鱼哥']
     },
     '阿伦': {
-      file: './assets/invitations/alun.png',
+      file: './assets/invitations/alun.webp',
       aliases: ['阿伦', '啊伦', '谷翌瑞', 'gyr']
     },
     '姑奶奶': {
-      file: './assets/invitations/gunainai.png',
+      file: './assets/invitations/gunainai.webp',
       aliases: ['姑奶奶', '朱瑾红', '菇', 'zjh']
     },
     'KK': {
-      file: './assets/invitations/kk.png',
+      file: './assets/invitations/kk.webp',
       aliases: ['KK', '容世强', 'rsq']
     },
     '泽北': {
-      file: './assets/invitations/zebei.png',
+      file: './assets/invitations/zebei.webp',
       aliases: ['泽北', '黄宗泽', '陈强', 'cq'],
       greeting: '哟，不是去看库里嘛？'
     }

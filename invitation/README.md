@@ -1,26 +1,31 @@
-# RAP GOING 2026 · 邀请函网页更新包
+# RAP GOING 2026 · 邀请函网页更新包（速度优化版）
 
 这是一个纯静态版本，不需要 npm、不需要数据库，也不需要服务器配置。GitHub Pages 可以直接运行。
+
+这个版本主要做了手机端访问速度优化：
+
+- Logo 从大体积 PNG 改为压缩版 WebP
+- 18 张邀请函从高清 PNG 改为适合手机查看的 WebP
+- 页面逻辑不变，昵称匹配、彩蛋、放大查看全部保留
+- 整体体积比原版明显更小，GitHub Pages 打开更轻快
 
 ## 文件结构
 
 ```text
-index.html
-styles.css
-app.js
-assets/
-  logo.png
-  invitations/
-    18 张邀请函 PNG
+invitation/
+  index.html
+  styles.css
+  app.js
+  assets/
+    logo.webp
+    invitations/
+      18 张邀请函 WebP
 ```
 
 ## 最简单的使用方式
 
-### 如果这是一个独立网页
-把本文件夹里的全部内容放到 GitHub 仓库根目录并提交，开启 GitHub Pages 即可。
-
 ### 如果要放进现有 RAP GOING 网站
-建议在仓库中建立一个 `invitation` 文件夹，把本更新包的全部内容放进去：
+建议在仓库中建立一个 `invitation` 文件夹，把本更新包里的 `invitation` 文件夹整体放进去：
 
 ```text
 你的仓库/
@@ -44,7 +49,6 @@ assets/
 - MATCHING 动画和成功问候
 - 4 个固定彩蛋：羚羊 / 伍广 / 淤青 / 泽北
 - 未匹配时不暴露名单
-- 邀请函高清 PNG 原图展示
 - 点击图片全屏查看
 - 手机端可长按 / 截图保存
 - 手机与电脑端自适应
