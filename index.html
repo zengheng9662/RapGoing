@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>RAP GOING 秘密任务</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+
+  <main id="app" class="app-shell">
+    <!-- 首页 -->
+    <section id="view-home" class="view is-active">
+      <div class="phone-panel home-panel">
+        <header class="home-header">
+          <div class="brand-wrap">
+            <img class="brand-logo" src="assets/rap-going-logo.png" alt="RAP GOING"
+                 onerror="this.hidden=true;this.nextElementSibling.hidden=false;" />
+            <div class="brand-fallback" hidden>RAP GOING</div>
+          </div>
+        </header>
+
+        <div class="home-main">
+          <button id="btn-enter-draw" class="primary-action glow-button" type="button">
+            <span aria-hidden="true">🎴</span>
+            <span>抽取秘密任务</span>
+          </button>
+          <p class="helper-text">每个人只能抽取一次<br />不要给别人看哦 👀</p>
+        </div>
+
+        <nav class="home-tools" aria-label="管理工具">
+          <button class="tool-link" data-nav="list" type="button"><span>📋</span> 名单</button>
+          <button class="tool-link" data-nav="settings" type="button"><span>⚙️</span> 设置</button>
+        </nav>
+      </div>
+    </section>
+
+    <!-- 抽签 -->
+    <section id="view-draw" class="view">
+      <div class="phone-panel draw-panel">
+        <button class="icon-button top-left" data-nav="home" type="button" aria-label="返回首页">←</button>
+        <div class="draw-heading">任务抽取中</div>
+
+        <div class="card-stack-bg" aria-hidden="true">
+          <div></div><div></div><div></div>
+        </div>
+
+        <div id="draw-stage-name" class="draw-stage is-active">
+          <div class="name-dialog soft-card">
+            <button id="btn-close-name" class="dialog-close" type="button" aria-label="关闭">×</button>
+            <h2>输入你的名字</h2>
+            <input id="name-input" class="text-input" type="text" maxlength="24"
+                   placeholder="请输入名字 / 昵称" autocomplete="off" />
+            <button id="btn-start-draw" class="glow-button dialog-action" type="button">开始抽任务</button>
+            <p id="name-error" class="error-text" role="alert"></p>
+          </div>
+        </div>
+
+        <div id="draw-stage-preview" class="draw-stage">
+          <div class="preview-orb">
+            <div id="preview-emoji" class="preview-emoji" aria-live="polite">🥣</div>
+          </div>
+          <h2 class="preview-question">要这张任务吗？</h2>
+          <div class="preview-actions">
+            <button id="btn-swap" class="secondary-action" type="button">换一张（3/3）</button>
+            <button id="btn-accept" class="glow-button compact" type="button">要这张</button>
+          </div>
+          <p class="swap-note">最多可换 3 次</p>
+        </div>
+
+        <div id="draw-stage-reveal" class="draw-stage">
+          <div id="flip-card" class="flip-card is-flipped">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <span id="reveal-emoji-front" class="reveal-emoji">🥣</span>
+              </div>
+              <div class="flip-card-back">
+                <span id="reveal-emoji" class="reveal-emoji small">🥣</span>
+                <h2 id="reveal-title">妈妈</h2>
+                <p id="reveal-content"></p>
+              </div>
+            </div>
+          </div>
+          <button id="btn-generate-card" class="glow-button wide" type="button">生成任务卡</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 任务卡 -->
+    <section id="view-card" class="view">
+      <div class="phone-panel task-card-screen">
+        <div id="capture-card" class="capture-card">
+          <div class="task-brand-wrap">
+            <img class="task-logo" src="assets/rap-going-logo.png" alt="RAP GOING"
+                 onerror="this.hidden=true;this.nextElementSibling.hidden=false;" />
+            <div class="task-brand-fallback" hidden>RAP GOING</div>
+          </div>
+          <div class="secret-label">秘密任务</div>
+          <div id="card-emoji" class="card-emoji">🥣</div>
+          <h1 id="card-title">妈妈</h1>
+          <p id="card-content"></p>
+          <div class="card-divider"></div>
+          <div id="card-name" class="card-name">NAME</div>
+        </div>
+        <p class="screenshot-tip">📸 截图保存这张任务卡</p>
+        <button class="secondary-action full" data-nav="home" type="button">返回首页</button>
+      </div>
+    </section>
+
+    <!-- 名单 -->
+    <section id="view-list" class="view admin-view">
+      <div class="admin-panel">
+        <header class="admin-header">
+          <button class="icon-button" data-nav="home" type="button" aria-label="返回首页">←</button>
+          <div>
+            <h1>名单</h1>
+            <p id="list-summary" class="muted"></p>
+          </div>
+          <button id="btn-reset-records-shortcut" class="text-button danger-lite" type="button">清空</button>
+        </header>
+
+        <div class="segmented" role="tablist" aria-label="名单排序">
+          <button id="tab-draw-order" class="segment is-active" type="button" role="tab">抽卡顺序</button>
+          <button id="tab-complete-order" class="segment" type="button" role="tab">完成顺序</button>
+        </div>
+
+        <div id="list-empty" class="empty-state is-hidden">还没有人抽卡 🎴</div>
+        <div id="records-list" class="record-list"></div>
+      </div>
+    </section>
+
+    <!-- 设置 -->
+    <section id="view-settings" class="view admin-view">
+      <div class="admin-panel wide-admin">
+        <header class="admin-header">
+          <button class="icon-button" data-nav="home" type="button" aria-label="返回首页">←</button>
+          <div>
+            <h1>设置</h1>
+            <p class="muted">本机保存，不进行多设备同步</p>
+          </div>
+        </header>
+
+        <div class="settings-grid">
+          <section class="settings-card">
+            <div class="settings-card-title-row">
+              <h2>任务管理</h2>
+              <button id="btn-add-task" class="secondary-action small" type="button">＋ 添加任务</button>
+            </div>
+            <div id="task-list" class="task-list"></div>
+          </section>
+
+          <section class="settings-card data-card">
+            <h2>数据</h2>
+            <button id="btn-reset-all" class="secondary-action full danger" type="button">重置</button>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 编辑任务弹窗 -->
+  <div id="task-modal" class="modal-layer is-hidden" role="dialog" aria-modal="true" aria-labelledby="task-modal-title">
+    <div class="modal-card">
+      <button id="btn-close-task-modal" class="dialog-close" type="button" aria-label="关闭">×</button>
+      <h2 id="task-modal-title">编辑任务</h2>
+      <label class="field-label">任务名称</label>
+      <input id="task-name-input" class="text-input" type="text" maxlength="30" />
+      <label class="field-label">任务内容</label>
+      <textarea id="task-content-input" class="text-area" rows="6" maxlength="500"></textarea>
+      <label class="field-label">抽取预览图标</label>
+      <input id="task-emoji-input" class="text-input emoji-input" type="text" maxlength="8" placeholder="例如：🥣" />
+      <button id="btn-save-task" class="glow-button dialog-action" type="button">保存</button>
+    </div>
+  </div>
+
+  <!-- 确认弹窗 -->
+  <div id="confirm-modal" class="modal-layer is-hidden" role="dialog" aria-modal="true">
+    <div class="modal-card confirm-card">
+      <h2 id="confirm-title">确认操作？</h2>
+      <p id="confirm-message" class="muted"></p>
+      <div class="confirm-actions">
+        <button id="btn-confirm-cancel" class="secondary-action" type="button">取消</button>
+        <button id="btn-confirm-ok" class="secondary-action danger" type="button">确认</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
