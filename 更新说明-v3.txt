@@ -1,0 +1,19 @@
+RAP GOING 游戏总入口 v3
+
+本次改动：
+1. https://zengheng9662.github.io/RapGoing/
+   进入总入口前先输入四位数字口令 0203。
+
+2. https://zengheng9662.github.io/RapGoing/secret-task/
+   秘密任务保持独立网址，直接访问不需要密码。
+
+3. https://zengheng9662.github.io/RapGoing/childhood/
+   童年回忆仍保留独立的 0203 口令，避免通过子网址绕过总入口。
+
+4. 新增：
+   https://zengheng9662.github.io/RapGoing/invitation/
+   邀请函独立页面，目前先做同 UI 的占位页，等后续更新具体内容。
+
+备注：
+总入口解锁状态只保存在当前浏览器标签会话中。
+重新打开新的浏览器会话时，需要重新输入口令。

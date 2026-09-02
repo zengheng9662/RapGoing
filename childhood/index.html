@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>童年回忆 · 912 RAP GOING</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <main class="page-shell">
+    <section class="panel">
+      <a class="back" href="../" aria-label="返回游戏入口">←</a>
+
+      <div id="locked-view" class="center-view">
+        <div class="mini-label">912 · RAP GOING</div>
+        <div class="big-icon">🔒</div>
+        <h1>童年回忆</h1>
+        <p>请输入四位数字口令</p>
+        <form id="unlock-form" class="unlock-form">
+          <input id="pin" class="pin-input" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" aria-label="四位数字口令" />
+          <div id="error" class="error-text" role="alert"></div>
+          <button class="glow-button" type="submit">进入</button>
+        </form>
+      </div>
+
+      <div id="unlocked-view" class="center-view is-hidden">
+        <div class="mini-label">912 · RAP GOING</div>
+        <div class="big-icon">📷</div>
+        <h1>童年回忆</h1>
+        <p>内容准备中</p>
+        <div class="coming-soon">COMING SOON</div>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
