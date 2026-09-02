@@ -69,10 +69,7 @@
 
     <section id="successView" class="view success-view" aria-labelledby="successTitle">
       <div class="success-card">
-        <div class="success-topline">
-          <img class="success-logo" src="./assets/logo.webp" alt="RAP GOING" draggable="false" decoding="async" width="2048" height="768" />
-          <h2 id="successTitle" class="sr-only">你的专属邀请函</h2>
-        </div>
+        <h2 id="successTitle" class="sr-only">你的专属邀请函</h2>
 
         <button id="invitationImageButton" class="invitation-frame" type="button" aria-label="点击放大邀请函">
           <span class="image-shimmer" aria-hidden="true"></span>
@@ -80,6 +77,9 @@
         </button>
 
         <p class="save-tip">点击图片放大 · 长按 / 截图保存邀请函</p>
+        <a id="downloadOriginalBtn" class="neon-button secondary download-btn" href="#" download rel="noopener">
+          <span>下载原图</span>
+        </a>
         <button class="text-button" type="button" data-action="home">← 返回主页</button>
       </div>
     </section>

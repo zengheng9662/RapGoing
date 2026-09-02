@@ -4,77 +4,95 @@
   const PEOPLE = {
     '哇哇哇': {
       file: './assets/invitations/wawawa.webp',
+      original: './assets/originals/wawawa.png',
       aliases: ['哇哇哇', '陈铎宇', 'cdy', '教练']
     },
     '狗子': {
       file: './assets/invitations/gouzi.webp',
+      original: './assets/originals/gouzi.png',
       aliases: ['狗子']
     },
     '咕噜': {
       file: './assets/invitations/gulu.webp',
+      original: './assets/originals/gulu.png',
       aliases: ['咕噜', '巫皖怡', 'wwy']
     },
     '功夫饭': {
       file: './assets/invitations/gongfufan.webp',
+      original: './assets/originals/gongfufan.png',
       aliases: ['功夫饭', '饭']
     },
     '地瓜': {
       file: './assets/invitations/digua.webp',
+      original: './assets/originals/digua.png',
       aliases: ['地瓜', '刘俊豪']
     },
     '滑板鸡': {
       file: './assets/invitations/skate-chicken.webp',
+      original: './assets/originals/skate-chicken.png',
       aliases: ['滑板鸡', '赵泽彬', 'zzb']
     },
     '哼哼': {
       file: './assets/invitations/hengheng.webp',
+      original: './assets/originals/hengheng.png',
       aliases: ['哼哼', '曾珩', 'zh']
     },
     '羚羊': {
       file: './assets/invitations/antelope.webp',
+      original: './assets/originals/antelope.png',
       aliases: ['羚羊', '李扬', 'goat', '魅魔', 'ly'],
       greeting: '魅魔，你来啦~'
     },
     '泡泡': {
       file: './assets/invitations/bubble.webp',
+      original: './assets/originals/bubble.png',
       aliases: ['泡泡', '张鹏奥', 'zpa']
     },
     '伍广': {
       file: './assets/invitations/wuguang.webp',
+      original: './assets/originals/wuguang.png',
       aliases: ['伍广', '功夫胖', '伍伯', '5g', '大伯', 'wg'],
       greeting: '大伯，你来啦~'
     },
     '小如': {
       file: './assets/invitations/xiaoru.webp',
+      original: './assets/originals/xiaoru.png',
       aliases: ['小如', '孙玉如', 'syr']
     },
     '淤青': {
       file: './assets/invitations/yuqing.webp',
+      original: './assets/originals/yuqing.png',
       aliases: ['淤青', '齐刘海', 'yyq', '严雨晴', '老乡'],
       greeting: '老乡，你来啦~'
     },
     '穗穗': {
       file: './assets/invitations/suisui.webp',
+      original: './assets/originals/suisui.png',
       aliases: ['穗穗']
     },
     '章鱼': {
       file: './assets/invitations/octopus.webp',
+      original: './assets/originals/octopus.png',
       aliases: ['章鱼', 'ydc', '尹德驰', '章鱼哥']
     },
     '阿伦': {
       file: './assets/invitations/alun.webp',
+      original: './assets/originals/alun.png',
       aliases: ['阿伦', '啊伦', '谷翌瑞', 'gyr']
     },
     '姑奶奶': {
       file: './assets/invitations/gunainai.webp',
+      original: './assets/originals/gunainai.png',
       aliases: ['姑奶奶', '朱瑾红', '菇', 'zjh']
     },
     'KK': {
       file: './assets/invitations/kk.webp',
+      original: './assets/originals/kk.png',
       aliases: ['KK', '容世强', 'rsq']
     },
     '泽北': {
       file: './assets/invitations/zebei.webp',
+      original: './assets/originals/zebei.png',
       aliases: ['泽北', '黄宗泽', '陈强', 'cq'],
       greeting: '哟，不是去看库里嘛？'
     }
@@ -111,8 +129,11 @@
   const imageModal = document.getElementById('imageModal');
   const modalImage = document.getElementById('modalImage');
   const closeModalBtn = document.getElementById('closeModalBtn');
+  const downloadOriginalBtn = document.getElementById('downloadOriginalBtn');
 
   let currentImage = '';
+  let currentOriginalImage = '';
+  let currentPersonName = '';
   let matchingToken = 0;
 
   function showView(name) {
@@ -142,6 +163,12 @@
     invitationImage.classList.remove('is-loaded');
     invitationImageButton.classList.remove('is-loaded');
     currentImage = '';
+    currentOriginalImage = '';
+    currentPersonName = '';
+    if (downloadOriginalBtn) {
+      downloadOriginalBtn.setAttribute('href', '#');
+      downloadOriginalBtn.setAttribute('download', '');
+    }
     showView('home');
   }
 
@@ -201,6 +228,12 @@
     if (token !== matchingToken) return;
 
     currentImage = person.file;
+    currentOriginalImage = person.original || '';
+    currentPersonName = personName;
+    if (downloadOriginalBtn && currentOriginalImage) {
+      downloadOriginalBtn.href = currentOriginalImage;
+      downloadOriginalBtn.download = `${personName}-RAP-GOING-invitation.png`;
+    }
     invitationImage.classList.remove('is-loaded');
     invitationImageButton.classList.remove('is-loaded');
     invitationImage.alt = `${personName}的 RAP GOING 专属邀请函`;
@@ -277,6 +310,15 @@
 
   invitationImageButton.addEventListener('click', openModal);
   closeModalBtn.addEventListener('click', closeModal);
+
+  if (downloadOriginalBtn) {
+    downloadOriginalBtn.addEventListener('click', event => {
+      if (!currentOriginalImage) {
+        event.preventDefault();
+        return;
+      }
+    });
+  }
 
   imageModal.addEventListener('click', event => {
     if (event.target === imageModal || event.target.classList.contains('modal-scroll')) closeModal();
