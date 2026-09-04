@@ -95,6 +95,12 @@
       original: './assets/originals/zebei.png',
       aliases: ['泽北', '黄宗泽', '陈强', 'cq'],
       greeting: '哟，不是去看库里嘛？'
+    },
+    'seven': {
+      file: './assets/invitations/seven.webp',
+      original: './assets/originals/seven.png',
+      aliases: ['seven', '7', '赛文', '77', '七七', '七'],
+      greeting: '宝宝，虽然你没来，但是我心里有你~'
     }
   };
 
