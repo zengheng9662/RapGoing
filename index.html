@@ -12,6 +12,7 @@
   <div class="ambient ambient-b"></div>
 
   <main class="page-shell">
+    <!-- 总入口密码 -->
     <section id="gate-panel" class="hub-panel gate-panel" aria-labelledby="gate-title">
       <header class="hub-header">
         <div class="eyebrow">09 · 12</div>
@@ -25,27 +26,17 @@
           <strong>活动入口</strong>
           <span>输入四位数字口令</span>
         </div>
-
         <form id="gate-form" class="gate-form">
-          <input
-            id="gate-input"
-            class="pin-input"
-            type="password"
-            inputmode="numeric"
-            pattern="[0-9]*"
-            maxlength="4"
-            autocomplete="off"
-            aria-label="四位数字口令"
-            placeholder="••••"
-          />
+          <input id="gate-input" class="pin-input" type="password" inputmode="numeric" pattern="[0-9]*"
+                 maxlength="4" autocomplete="off" aria-label="四位数字口令" placeholder="••••" />
           <div id="gate-error" class="error-text" role="alert"></div>
           <button class="glow-button" type="submit">进入</button>
         </form>
       </div>
-
       <footer class="hub-footer">912 · RAP GOING</footer>
     </section>
 
+    <!-- 游戏总入口 -->
     <section id="hub-panel" class="hub-panel is-hidden" aria-labelledby="page-title">
       <header class="hub-header">
         <div class="eyebrow">09 · 12</div>
@@ -81,11 +72,9 @@
           <div class="game-arrow" aria-hidden="true">→</div>
         </a>
       </div>
-
       <footer class="hub-footer">912 · RAP GOING</footer>
     </section>
   </main>
-
   <script src="app.js"></script>
 </body>
 </html>
