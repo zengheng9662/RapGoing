@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>RG · Remember me</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="app" class="app">
+    <section id="homeView" class="view home-view active" aria-label="首页">
+      <img class="brand-logo" src="assets/rap-going-logo.svg" alt="RAP GOING" />
+      <div class="corner-note">RG / 2026</div>
+      <div class="home-panel">
+        <p class="eyebrow">CHILDHOOD ARCHIVE</p>
+        <h1>Remember me</h1>
+        <p class="intro">iPad 横屏展示 · 白底极简 · 一次看一张</p>
+        <div class="home-grid">
+          <button id="homeGameCard" class="home-card">
+            <span class="card-kicker">MAIN GAME</span>
+            <span class="card-title">Remember me</span>
+            <span class="card-meta"><span id="homeLoadedCount">0</span> / <span id="homeTotalCount">15</span></span>
+          </button>
+          <button id="homeExtraCard" class="home-card subtle">
+            <span class="card-kicker">BONUS</span>
+            <span class="card-title">番外</span>
+            <span class="card-meta">更多照片</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="loadingView" class="view loading-view" aria-label="预加载">
+      <img class="brand-logo" src="assets/rap-going-logo.svg" alt="RAP GOING" />
+      <div class="loader-panel">
+        <p class="eyebrow">CHILDHOOD ARCHIVE</p>
+        <h2>Remember me</h2>
+        <p class="micro">准备照片中 · <span id="loadedCount">0</span> / <span id="totalCount">15</span></p>
+        <div class="progress-track" aria-hidden="true"><div id="progressBar" class="progress-bar"></div></div>
+        <button id="startBtn" class="primary-btn" disabled>照片加载中</button>
+        <button id="earlyBtn" class="text-btn">直接开始</button>
+        <button id="backHomeBtn" class="text-btn secondary">返回首页</button>
+      </div>
+      <div class="corner-note">提前加载完成后再玩会更顺畅</div>
+    </section>
+
+    <section id="gameView" class="view game-view" aria-label="Remember me 游戏">
+      <header class="topbar">
+        <button id="exitBtn" class="icon-btn" aria-label="返回">←</button>
+        <div class="game-title">Remember me</div>
+        <div id="progressText" class="counter">01 / 15</div>
+      </header>
+      <div class="stage">
+        <div id="photoShell" class="photo-shell waiting">
+          <img id="photo" alt="童年照片" draggable="false" />
+          <div class="photo-loading">LOADING</div>
+        </div>
+      </div>
+      <footer class="controls">
+        <div class="reveal-area">
+          <button id="revealBtn" class="reveal-btn">揭晓</button>
+          <div id="nameCard" class="name-card" aria-live="polite"></div>
+        </div>
+        <button id="nextBtn" class="next-btn" disabled aria-label="下一张">→</button>
+      </footer>
+    </section>
+
+    <section id="endView" class="view end-view" aria-label="本轮结束">
+      <img class="brand-logo" src="assets/rap-going-logo.svg" alt="RAP GOING" />
+      <div class="end-panel">
+        <p class="eyebrow">15 / 15</p>
+        <h2>这一轮结束了</h2>
+        <button id="againBtn" class="primary-btn">再来一轮</button>
+        <button id="homeBtn" class="text-btn">返回首页</button>
+      </div>
+    </section>
+
+    <section id="extraIntroView" class="view extra-intro-view" aria-label="番外介绍">
+      <img class="brand-logo" src="assets/rap-going-logo.svg" alt="RAP GOING" />
+      <div class="loader-panel">
+        <p class="eyebrow">BONUS ARCHIVE</p>
+        <h2>番外</h2>
+        <p class="bonus-copy">由于大家太热情了…</p>
+        <p class="bonus-subcopy">这里收录了一些没有放进主游戏的更多照片。</p>
+        <button id="enterExtraBtn" class="primary-btn">进入</button>
+        <button id="extraBackHomeBtn" class="text-btn secondary">返回首页</button>
+      </div>
+      <div class="corner-note">点击照片可放大查看</div>
+    </section>
+
+    <section id="extraView" class="view extra-view" aria-label="番外照片墙">
+      <header class="topbar wide">
+        <button id="closeExtraBtn" class="icon-btn" aria-label="返回">←</button>
+        <div class="game-title">番外</div>
+        <div class="counter"><span id="extraCount"></span></div>
+      </header>
+      <div id="masonry" class="masonry"></div>
+    </section>
+
+    <div id="lightbox" class="lightbox" hidden>
+      <button id="lightboxClose" class="lightbox-close" aria-label="关闭">×</button>
+      <img id="lightboxImg" alt="番外照片大图" />
+    </div>
+  </main>
+  <script src="game-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
